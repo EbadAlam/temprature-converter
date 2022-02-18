@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Temprature Converter</title>
+	<link rel="icon" href="./icon.png">
+</head>
+<body>
+	<section>
+	<form class="f-form">
+		<div>
+		<label>Enter temprature in Fahrenheit</label>
+		<input class="f-input" type="number"> 
+		<button class="c">Convert to Celsius</button>
+		</div>
+	</form>
+		<div class="output-c">
+
+		</div>
+	</section>
+	<section>
+	<form class="c-form">
+		<div>
+		<label>Enter temprature in Celsius</label>
+		<input class="c-input" type="number"> 
+		<button class="f">Convert to Fahrenheit</button>
+		</div>
+	</form>
+		<div class="output-f">
+
+		</div>
+	</section>
+</body>
+<script type="text/javascript">
+	const inputF = document.querySelector('.f-input');
+	const c = document.querySelector('.f-form');
+	const outputC = document.querySelector('.output-c');
+
+	// f.onclick = () => {
+	// 	alert('fahrenheit');
+	// } 
+	// c.onclick = () => {
+	// 	alert('celsius');
+	// } 
+
+	c.addEventListener('submit',function(event){
+		event.preventDefault();
+		const num = inputF.value;
+		let op = (`${num}`- 32)*5/9;
+		let temp = `<h4>${op} Celsius</h4>`;
+		outputC.innerHTML = temp;
+		inputF.value = '';
+})
+
+</script>
+<script type="text/javascript">
+	const inputC = document.querySelector('.c-input');
+	const f = document.querySelector('.c-form');
+	const outputF = document.querySelector('.output-f');
+
+	// f.onsubmit = () => {
+	// 	alert('fahrenheit');
+	// } 
+	// c.onsubmit = () => {
+	// 	alert('celsius');
+	// } 
+
+	f.addEventListener('submit',function(event){
+		event.preventDefault();
+		const num = inputC.value;
+		let op = (`${num}`*9/5)+32;
+		let temp = `<h4>${op} Fahrenheit</h4>`;
+		outputF.innerHTML = temp;
+		inputC.value = '';
+	})
+
+</script>
+</html>
