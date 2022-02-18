@@ -61,7 +61,7 @@
 <body>
 	<!-- <section class="section"> -->
 		<div class="alert">
-			Define proper temprature!
+			Define temprature!
 		</div>
 	<section>
 	<form class="form">
@@ -107,11 +107,11 @@
 	// } 
 
 	c.addEventListener('click',function(event){
+		event.preventDefault();
 		if (input.value == '') {
 			alert.style.display = 'block';
 			setTimeout(function(){alert.style.display = 'none'}, 2000); 
 	}else {
-		event.preventDefault();
 		const num = input.value;
 		let op = (`${num}`- 32)*5/9;
 		let temp = `<h4>${op} Celsius</h4>`;
@@ -120,11 +120,11 @@
 	}
 		})
 f.addEventListener('click',function(event){
+	event.preventDefault();
 	if (input.value == '') {
 		alert.style.display = 'block';
 			setTimeout(function(){alert.style.display = 'none'}, 2000); 
 	}else {
-	event.preventDefault();
 		const num = input.value;
 		let op = (`${num}`*9/5)+32;
 		let temp = `<h4>${op} Fahrenheit</h4>`;
