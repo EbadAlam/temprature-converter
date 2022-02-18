@@ -20,60 +20,70 @@
 			margin-top: 10px;
 			margin-bottom: 10px;
 			padding: 5px 0px 5px 5px;
+			width: 100%;
 		}
 		.output{
 			border: 1px solid black;
-			width: 20%;
-			margin: 0 auto;
+			width: 100%;
+			/*margin: 0 auto;*/
 			color: #5e5a5a;
 			height: 60px;
 			padding-left: 35px;
 			box-sizing: border-box;
-			margin-left: 42%;
+			/*margin-left: 42%;*/
 		}
 		.c , .f{
 			padding: 10px;
 			font-size: 20px;
+			width: 100%;
+			margin-bottom: 10px;
 			background: aqua;
 			border: none;
 			border-radius: 20px;
 			cursor: pointer;
 		}
+		section{
+			margin: 0 auto;
+			width: 20%;
+		}
 	</style>
 </head>
 <body>
-	<section class="section">
+	<!-- <section class="section"> -->
 	<section>
-	<form class="f-form">
+	<form class="form">
 		<div class="box">
-		<h2>Enter temprature in Fahrenheit</h2>
-		<input class="f-input" type="number"> 
+		<h2>Enter temprature</h2>
+		<input class="input" type="number"> 
 		<button class="c">Convert to Celsius</button>
+		<button class="f">Convert to Fahrenheit</button>
+
 		</div>
 	</form>
 		<!-- <div class="output-c output">
 
 		</div> -->
+<div class="output"></div>
 	</section>
-	<section>
+	<!-- <section>
 	<form class="c-form">
 		<div class="box">
 		<h2>Enter temprature in Celsius</h2>
 		<input class="c-input" type="number"> 
 		<button class="f">Convert to Fahrenheit</button>
 		</div>
-	</form>
+	</form> -->
 		<!-- <div class="output-f output">
 
 		</div> -->
-	</section>
-</section>
-<div class="output"></div>
+	<!-- </section> -->
+<!-- </section> -->
 </body>
 <script type="text/javascript">
-	const inputF = document.querySelector('.f-input');
-	const c = document.querySelector('.f-form');
-	const outputC = document.querySelector('.output');
+	const input = document.querySelector('.input');
+	const c = document.querySelector('.c');
+	const f = document.querySelector('.f');
+	const output = document.querySelector('.output');
 
 	// f.onclick = () => {
 	// 	alert('fahrenheit');
@@ -82,16 +92,24 @@
 	// 	alert('celsius');
 	// } 
 
-	c.addEventListener('submit',function(event){
+	c.addEventListener('click',function(event){
 		event.preventDefault();
-		const num = inputF.value;
+		const num = input.value;
 		let op = (`${num}`- 32)*5/9;
 		let temp = `<h4>${op} Celsius</h4>`;
-		outputC.innerHTML = temp;
-		inputF.value = '';
+		output.innerHTML = temp;
+		input.value = '';
+		})
+f.addEventListener('click',function(event){
+	event.preventDefault();
+		const num = input.value;
+		let op = (`${num}`*9/5)+32;
+		let temp = `<h4>${op} Fahrenheit</h4>`;
+		output.innerHTML = temp;
+		input.value = '';
 })
 
-</script>
+</script><!-- 
 <script type="text/javascript">
 	const inputC = document.querySelector('.c-input');
 	const f = document.querySelector('.c-form');
@@ -113,5 +131,5 @@
 		inputC.value = '';
 	})
 
-</script>
+</script> -->
 </html>
