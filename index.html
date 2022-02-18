@@ -4,37 +4,76 @@
 	<meta charset="utf-8">
 	<title>Temprature Converter</title>
 	<link rel="icon" href="./icon.png">
+	<style type="text/css">
+	*{
+		font-family: cursive;
+	}
+		.section{
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 20px;
+		}
+		.box{
+			display: grid;
+		}
+		input{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 5px 0px 5px 5px;
+		}
+		.output{
+			border: 1px solid black;
+			width: 20%;
+			margin: 0 auto;
+			color: #5e5a5a;
+			height: 60px;
+			padding-left: 35px;
+			box-sizing: border-box;
+			margin-left: 42%;
+		}
+		.c , .f{
+			padding: 10px;
+			font-size: 20px;
+			background: aqua;
+			border: none;
+			border-radius: 20px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
+	<section class="section">
 	<section>
 	<form class="f-form">
-		<div>
-		<label>Enter temprature in Fahrenheit</label>
+		<div class="box">
+		<h2>Enter temprature in Fahrenheit</h2>
 		<input class="f-input" type="number"> 
 		<button class="c">Convert to Celsius</button>
 		</div>
 	</form>
-		<div class="output-c">
+		<!-- <div class="output-c output">
 
-		</div>
+		</div> -->
 	</section>
 	<section>
 	<form class="c-form">
-		<div>
-		<label>Enter temprature in Celsius</label>
+		<div class="box">
+		<h2>Enter temprature in Celsius</h2>
 		<input class="c-input" type="number"> 
 		<button class="f">Convert to Fahrenheit</button>
 		</div>
 	</form>
-		<div class="output-f">
+		<!-- <div class="output-f output">
 
-		</div>
+		</div> -->
 	</section>
+</section>
+<div class="output"></div>
 </body>
 <script type="text/javascript">
 	const inputF = document.querySelector('.f-input');
 	const c = document.querySelector('.f-form');
-	const outputC = document.querySelector('.output-c');
+	const outputC = document.querySelector('.output');
 
 	// f.onclick = () => {
 	// 	alert('fahrenheit');
@@ -56,7 +95,7 @@
 <script type="text/javascript">
 	const inputC = document.querySelector('.c-input');
 	const f = document.querySelector('.c-form');
-	const outputF = document.querySelector('.output-f');
+	const outputF = document.querySelector('.output');
 
 	// f.onsubmit = () => {
 	// 	alert('fahrenheit');
